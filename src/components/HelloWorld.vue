@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <h2>{{ msgVM }}</h2>
     <p>{{ x }}</p>
     <p>{{ Number.MAX_SAFE_INTEGER }}</p>
     <p>{{ Number.MIN_SAFE_INTEGER }}</p>
@@ -13,6 +14,10 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
   public x: number = 123;
+  mounted (): void {
+    console.log(this.msg)
+  };
+  @Computed()
 }
 </script>
 
